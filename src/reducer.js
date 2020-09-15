@@ -3,20 +3,8 @@ export const getBasketTotal = (basket) => (
 );
 
 export const initialState = {
-    basket: [{
-             id:"0006",
-                    title:"Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
-                    price: 369.00,
-                    rating:5,
-                    image:"https://images-na.ssl-images-amazon.com/images/I/41DQoLIfsRL._AC_US160_.jpg"
-    },{
-        id:"0006",
-               title:"Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
-               price: 369.00,
-               rating:5,
-               image:"https://images-na.ssl-images-amazon.com/images/I/41DQoLIfsRL._AC_US160_.jpg"
-}
-]
+    basket: [],
+    user: null
 };
 
 const reducer = (state, action) => {
@@ -46,6 +34,14 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket
             }
+        
+        case 'SET_USER': 
+            return {
+                ...state,
+                user: action.user
+            
+            }
+
         default:
             return state;    
     }
